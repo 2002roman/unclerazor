@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<link rel="stylesheet" type="text/css" href="global.css">
+	<style type="text/css">
+		.menu_account .menu_option.active {
+			font-family: 'Roboto-Bold';
+		}
+
+		.menu_account .menu_option {
+			font-family: 'Roboto-Regular';
+			background: #F2F2F2;
+			display: flex;
+			cursor: pointer;
+		}
+
+		.menu_account .menu_option span {
+			display: inline-block;
+		}
+
+		.menu_account .menu_option img {
+			width: auto;
+			margin: auto;	
+		}
+
+		@media only screen and (max-width: 412px) {			
+			.menu_account .menu_option {
+				width: 100%;
+				height: 11.4vw;
+				margin: 1.22vw 0;
+			}
+			.menu_account .menu_option span {
+				font-size: 3.9vw;
+				line-height: 11.4vw;
+				text-indent: 4.85vw;
+			}
+			.menu_account .menu_option img {
+				display: inline-block;
+				margin-right: 7.76vw;
+				height: 2.43vw;
+			}
+		}
+
+		@media only screen and (max-width: 920px) and (min-width: 412px) {			
+			.menu_account .menu_option {
+				width: 100%;
+				height: 47px;
+				margin: 5px 0;
+			}
+			.menu_account .menu_option span {
+				font-size: 16px;
+				line-height: 47px;
+				text-indent: 20px;
+			}
+			.menu_account .menu_option img {
+				display: inline-block;
+				margin-right: 32px;
+				height: 10px;
+			}
+		}
+
+		@media only screen and (max-width: 1280px) and (min-width: 920px) {
+			.menu_account .menu_option {
+				height: 3.67vw;
+				width: 21.17vw;
+				margin: 0.4vw 0;
+			}
+			.menu_account .menu_option span {
+				font-size: 1.25vw;				
+				line-height: 3.67vw;
+				text-indent: 0.78vw;
+			}
+			.menu_account .menu_option img {
+				display: none;
+			}
+
+		}
+
+		@media only screen and (min-width: 1280px) {
+			.menu_account .menu_option {
+				height: 47px;
+				width: 271px;
+				margin: 5px 0;
+			}
+			.menu_account .menu_option span {
+				font-size: 16px;
+				line-height: 47px;
+				text-indent: 10px;			
+			}
+			.menu_account .menu_option img {
+				display: none;
+			}
+
+		}
+
+	</style>
+	<div class="menu_account">
+		<div class="menu_option">
+			<span> Личный кабинет </span>
+			<img src="images/icons/right-arrow.svg">
+		</div>
+		<div class="menu_option">
+			<span> Учетная запись </span>
+			<img src="images/icons/right-arrow.svg">
+		</div>
+		<div class="menu_option">
+			<span> Счет и Бонусы</span>
+			<img src="images/icons/right-arrow.svg">
+		</div>
+		<div class="menu_option">
+			<span> Адреса доставки</span>
+			<img src="images/icons/right-arrow.svg">
+		</div>
+		<div class="menu_option">
+			<span> Мои желания</span>
+			<img src="images/icons/right-arrow.svg">
+		</div>
+		<div class="menu_option">
+			<span> История заказов</span>
+			<img src="images/icons/right-arrow.svg">
+		</div>
+		<div class="menu_option">
+			<span> История платежей</span>
+			<img src="images/icons/right-arrow.svg">
+		</div>
+		<div class="menu_option">
+			<span> Выйти</span>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		var MenuAccount = function () {
+			this.menuOptions = document.querySelectorAll('.menu_account .menu_option');
+			this.activatedOption = 0;
+		}
+
+		MenuAccount.prototype = {
+			init: function () {
+				this.addEventMenuOption();
+			},
+			addEventMenuOption: function () {
+				var self = this;
+				for (let i = 0; i < self.menuOptions.length; i++) {
+					self.menuOptions[i].addEventListener('click', function (e) {
+						self.openOption(i);
+					})
+				}
+			},
+			activeOption: function (i) {
+				this.menuOptions[i].classList.add('active');
+			},
+			inactiveOption: function () {
+				var i = this.activatedOption;
+				this.menuOptions[i].classList.remove('active');
+			},
+			openOption: function (i) {
+				var self = this;
+				self.inactiveOption();
+				self.activeOption(i);
+				self.activatedOption = i;
+			}
+		}
+		
+		new MenuAccount().init();
+	</script>
+</body>
+</html>
