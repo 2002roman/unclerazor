@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Personal Area</title>
+</head>
+<body>
+	<link rel="stylesheet" type="text/css" href="global.css">
+	<style type="text/css">
+		.personalArea .topBlock {
+			display: flex;
+		}
+		.welcomeText span {
+			color: #9A0606;
+			text-transform: uppercase;
+			font-family: 'Roboto-Medium';
+			display: inline-block;
+		}
+		.money {
+			display: flex;
+			margin: auto;
+			margin-right: 0;
+		}
+		.money .option .title, 
+		.money .option .text,
+		.money .option .moreDetails {
+			color: #000;
+		    text-transform: uppercase;
+		    font-family: 'Roboto-Medium';
+		    display: inline-block;
+		}
+		.money .option .text {
+			color: #9A0606;
+		}
+		.money .option .moreDetails {
+		    text-transform: unset;
+		}
+		.personalArea .card {
+			border: 1px solid #4D4D4D;
+		}
+		.personalArea .card .title {
+			background: #F9F9F9;
+		    text-transform: capitalize;
+		    font-family: 'Roboto-Medium';
+		}
+		.personalArea .card .block {
+		    display: flex;
+		}
+		.personalArea .card.personalInformation .image {
+			border-radius: 50%;
+			background-color: #F9F9F9;
+		}
+		.personalArea .card.yourPrivilegeCard .image {
+			width: auto;
+		}
+		.personalArea .card .image img {
+			height: 100%;
+			margin: auto;
+		}
+		.personalArea .card .block .information {
+		    display: flex;
+		    width: 100%;
+		}
+		.personalArea .card .block .information .row {
+			display: flex;
+    		flex-direction: column;
+    		margin-right: auto;
+    		margin-left: 0;
+		}
+		.personalArea .card .block .information .row:first-child {
+    		margin-left: auto;
+		}
+		.personalArea .card .block .information .row .option {
+			display: flex;
+			margin: auto 0;
+			margin-top: 0; 
+		}
+		.personalArea .card .block .information .row .option:first-child {
+			margin-top: auto; 
+		}
+		.personalArea .card .block .information .row .title {
+			font-family: 'Roboto-Regular';
+			text-transform: uppercase;
+			background: unset;
+		}
+		.personalArea .card .block .information .row .text {
+			background: unset;
+			font-family: 'Roboto-Medium';
+		}
+		
+
+
+		@media only screen and (max-width: 412px) {			
+			.personalArea .topBlock {
+				display: block;
+			}
+			.money .option:nth-child(2) {
+				margin: auto;
+			}
+			.welcomeText span {
+				font-size: 3.4vw;
+				line-height: 6.07vw;
+			}
+			.personalArea .card .block .information {
+				display: block;
+			}
+		    .money .option .title, 
+			.money .option .text,
+			.money .option .moreDetails {
+		    	font-size: 3.4vw;
+			}
+			.personalArea .card .title {
+			    font-size: 2.9vw;
+			    padding-left: 2.9vw;
+			    line-height: 6.01vw;
+			}
+			.personalArea .card .image {
+				margin: auto 1vw;
+				margin-right: 6.1vw;
+				width: 26.7vw;
+				height: 26.7vw;
+			}
+			.personalArea .card {
+				margin-top: 1.4vw;
+			}
+			.personalArea .card .block .information .row .title {
+				font-size: 2.9vw;
+				line-height: 7.07vw;
+			}
+			.personalArea .card .block .information .row .text {
+				font-size: 2.9vw;
+				line-height: 7.07vw;
+				text-indent: 4vw;
+			}
+			.personalArea .card.yourPrivilegeCard .image {
+				width: 60vw;
+    			height: auto;
+			}
+			.personalArea .card.yourPrivilegeCard .image img {
+				width: 100%;
+    			height: auto;
+			}
+		}
+
+		@media only screen and (max-width: 700px) and (min-width: 412px) {			
+			.personalArea .topBlock {
+				display: block;
+			}
+			.money .option:nth-child(2) {
+				margin: auto;
+			}
+			.welcomeText span {
+				font-size: 14px;
+				line-height: 25px;
+			}
+		    .money .option .title, 
+			.money .option .text,
+			.money .option .moreDetails {
+		    	font-size: 14px;
+			}
+			.personalArea .card .title {
+			    font-size: 12px;
+			    padding-left: 12px;
+			    line-height: 25px;
+			}
+			.personalArea .card .image {
+				margin: auto 4px;
+				margin-right: 25px;
+				width: 110px;
+				height: 110px;
+			}
+			.personalArea .card {
+				margin-top: 6px;
+			}
+			.personalArea .card .block .information {
+				display: block;
+			}
+			.personalArea .card .block .information .row .title {
+				font-size: 12px;
+				line-height: 29px;
+			}
+			.personalArea .card .block .information .row .text {
+				font-size: 12px;
+				line-height: 29px;
+				text-indent: 16px;
+			}
+			.personalArea .card .block .information .row .option {
+			    width: 260px;
+   				margin: auto;
+			}
+			.personalArea .card.yourPrivilegeCard .image {
+				width: 247px;
+    			height: auto;
+			}
+			.personalArea .card.yourPrivilegeCard .image img {
+				width: 100%;
+    			height: auto;
+			}
+			/*.welcomeText span {
+				font-size: 1.4vw;
+				line-height: 3.9vw;
+			}
+			.money .option:nth-child(2) {
+				margin: 0 2.34vw;
+			}
+		    .money .option .title, 
+			.money .option .text,
+			.money .option .moreDetails {
+		    	font-size: 1.25vw;
+			}
+			.personalArea .card {
+				margin-top: 1.4vw;
+			}
+			.personalArea .card .title {
+			    font-size: 1.25vw;
+			    padding-left: 1vw;
+			    line-height: 2.73vw;
+			}
+			.personalArea .card .image {
+				margin: 0.86vw 0.625vw;
+				width: 10.16vw;
+				height: 10.16vw;
+			}
+			.personalArea .card .block .information .row .title {
+				font-size: 1.25vw;
+			}
+			.personalArea .card .block .information .row .text {
+				font-size: 1.25vw;
+				line-height: 2.7vw;
+				text-indent: 0.4vw;
+			}*/
+		}
+
+		@media only screen and (max-width: 1280px) and (min-width: 700px) {
+			.welcomeText span {
+				font-size: 1.4vw;
+				line-height: 3.9vw;
+			}
+			.money .option:nth-child(2) {
+				margin: 0 2.34vw;
+			}
+		    .money .option .title, 
+			.money .option .text,
+			.money .option .moreDetails {
+		    	font-size: 1.25vw;
+			}
+			.personalArea .card {
+				margin-top: 1.4vw;
+			}
+			.personalArea .card .title {
+			    font-size: 1.25vw;
+			    padding-left: 1vw;
+			    line-height: 2.73vw;
+			}
+			.personalArea .card .image {
+				margin: 0.86vw 0.625vw;
+				width: 10.16vw;
+				height: 10.16vw;
+			}
+			.personalArea .card .block .information .row .title {
+				font-size: 1.25vw;
+			}
+			.personalArea .card .block .information .row .text {
+				font-size: 1.25vw;
+				line-height: 2.7vw;
+				text-indent: 0.4vw;
+			}
+		}
+
+		@media only screen and (min-width: 1280px) {
+			.welcomeText span {
+				font-size: 18px;
+				line-height: 50px;
+			}
+			.money .option:nth-child(2) {
+				margin: 0 30px;
+			}
+			.money .option .title, 
+			.money .option .text,
+			.money .option .moreDetails {
+		    	font-size: 16px;
+			}
+			.personalArea .card {
+				margin-top: 18px;
+			}
+			.personalArea .card .title {
+			    font-size: 16px;
+			    padding-left: 13px;
+			    line-height: 35px;
+			}
+			.personalArea .card .image {
+				margin: 11px 8px;
+				width: 130px;
+				height: 130px;
+			}
+			.personalArea .card .block .information .row .title {
+				font-size: 16px;
+			}
+			.personalArea .card .block .information .row .text {
+				font-size: 16px;
+				line-height: 35px;
+				text-indent: 5px;
+			}
+		}
+	</style>
+	<div class="personalArea">	
+		<div class="topBlock">
+			<div class="welcomeText">
+				<span> Добро пожаловать, NAME SURNAME!</span>
+			</div>
+			<div class="money">
+				<div class="option">
+					<span class="title">Бонусы </span>
+					<span class="text">1000РУБ </span>
+				</div>
+				<div class="option">
+					<span class="title">Счет </span>
+					<span class="text"> 1000РУБ </span>
+				</div>
+				<div class="option">
+					<span class="moreDetails"> Подробнее </span>
+				</div>
+			</div>
+		</div>
+		<div class="personalInformation card">
+			<div class="title"> личная информация </div>
+			<div class="block"> 
+				<div class="image">
+					<img src="images/person_image.png">
+				</div>
+				<div class="information">
+					<div class="row">
+						<div class="option">
+							<div class="title"> Имя </div>
+							<div class="text"> NAME SURNAME </div>	
+						</div>
+						<div class="option">
+							<div class="title"> Пол </div>
+							<div class="text"> Женский </div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="option">
+							<div class="title"> ДАТА РОЖДЕНИЯ </div>
+							<div class="text">  10.10.1910 </div>	
+						</div>
+						<div class="option">
+							<div class="title"> ГОРОД </div>
+							<div class="text"> Москва, Россия </div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="option">
+							<div class="title"> ТЕЛЕФОН </div>
+							<div class="text"> +7(111) 111 111 11 </div>	
+						</div>
+						<div class="option">
+							<div class="title"> E-MAIL </div>
+							<div class="text"> Namesurname@gmail.com </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="yourPrivilegeCard card">
+			<div class="title"> Ваша карта привилегий </div>
+			<div class="block"> 
+				<div class="image">
+					<img src="images/card_image.png">
+				</div>
+				<div class="information">
+					<div class="row">
+						<div class="option">
+							<div class="title"> Номер</div>
+							<div class="text">  карты 0000 0000 </div>	
+						</div>
+						<div class="option">
+							<div class="title"> Процент возврата </div>
+							<div class="text"> 0% </div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="option">
+							<div class="title"> Статус карты </div>
+							<div class="text">  000000000 </div>	
+						</div>
+						<div class="option">
+							<div class="title"> Сумма накоплений </div>
+							<div class="text"> 0</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
